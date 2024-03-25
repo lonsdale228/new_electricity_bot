@@ -1,8 +1,10 @@
-class User:
+from db.db_init import Base
+
+class User(Base):
     __tablename__ = 'users'
 
 
-class Timetable:
+class Timetable(Base):
     __tablename__ = 'timetables'
 
     start_time = ''
@@ -10,7 +12,7 @@ class Timetable:
     zone_type = ''
 
 
-class ElectricityState:
+class ElectricityState(Base):
     __tablename__ = 'electricity_states'
 
     start_time = ''

@@ -1,10 +1,10 @@
 import sqlalchemy
 from sqlalchemy import create_engine
-from sqlalchemy.orm import declarative_base
+from sqlalchemy.orm import declarative_base, sessionmaker
 
 Base = declarative_base()
 engine = create_engine('sqlite:///light.db', echo=True)
+Session = sessionmaker(engine)
 
-
-async def init_db():
+def init_db():
     Base.metadata.create_all(engine)
